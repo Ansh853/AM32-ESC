@@ -82,4 +82,26 @@ During operation, the STM32 executes the AM32 firmware, continuously acquiring m
 
 These PWM signals are supplied to the FD6288Q gate driver, which rapidly drives the six CSD19531Q5A MOSFETs forming the three-phase inverter. The inverter then applies the required voltage vectors across the motor windings, producing the torque necessary to rotate the BLDC motor. This closed feedback loop repeats thousands of times per second, allowing precise speed control, efficient power conversion, and reliable sensorless motor operation across a wide operating range.
 
+PCB Layout and Design Considerations
+
+The PCB layout was designed with a strong emphasis on electrical performance, thermal management, and signal integrity. Since the ESC operates by switching high currents at high frequencies, careful component placement and routing are essential for achieving efficient operation while minimizing electromagnetic interference (EMI) and switching losses.
+
+Component Placement
+
+The PCB has been partitioned into three primary functional sections: the power stage, control circuitry, and power supply. The six MOSFETs, gate driver, and bootstrap components are grouped together to form a compact switching stage, minimizing the distance between these critical components. The STM32G030 microcontroller and analog sensing circuitry are positioned away from the switching nodes to reduce electrical noise coupling, while the buck converter and LDO occupy a dedicated section of the board to provide clean and stable power to the digital circuitry.
+
+Power Routing
+
+High-current paths between the battery input, MOSFET bridge, and motor phase outputs have been implemented using wide copper pours to reduce resistive losses and improve current-carrying capability. The routing has been kept as short and direct as possible, minimizing parasitic resistance and inductance while improving overall power conversion efficiency.
+
+Particular attention was given to reducing the area enclosed by the high di/dt switching loops, helping to minimize voltage overshoot, ringing, and EMI during fast switching transitions.
+
+Signal Integrity
+
+Sensitive analog signals, including the Back-EMF sensing network, battery voltage divider, and current sensing amplifier, are routed separately from the power stage to minimize coupling of switching noise into the STM32 ADC inputs. Local decoupling capacitors are placed close to each integrated circuit to provide low-impedance paths for transient currents and maintain stable supply voltages during switching events.
+
+Thermal Management
+
+Since the majority of power dissipation occurs within the MOSFET bridge, the PCB incorporates large copper pours around the power stage to spread heat over a greater surface area. Multiple thermal vias beneath the MOSFET thermal pads provide an efficient heat transfer path to the opposite PCB layer, reducing junction temperature and improving long-term reliability under sustained high-current operation.
+
 
