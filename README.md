@@ -7,8 +7,9 @@ Custom AM32-compatible high-current BLDC Electronic Speed Controller (ESC) featu
 This project is a custom-designed three-phase Electronic Speed Controller (ESC) built around the **AM32 open-source firmware**. The objective of this design is to provide a compact, high-current motor controller capable of driving sensorless BLDC motors used in robotics, UAVs, autonomous underwater vehicles (AUVs/ROVs), and other embedded motion control applications.
 
 The hardware has been designed specifically to provide all the necessary peripherals required by the AM32 firmware, including a three-phase power stage, gate driving circuitry, Back-EMF sensing network, battery voltage measurement, current sensing, onboard power supplies, and debugging interfaces. Each subsystem has been carefully designed to ensure reliable operation under high switching frequencies while maintaining accurate feedback for the firmware's internal control algorithms.
-<img width="1060" height="688" alt="image" src="https://github.com/user-attachments/assets/3dd8e8e2-2dda-4d0c-ae80-309fd9c67f49" />
 <img width="778" height="517" alt="image" src="https://github.com/user-attachments/assets/6ca646cd-5e5d-49a4-a805-81319fa64ca6" />
+<img width="1060" height="688" alt="image" src="https://github.com/user-attachments/assets/3dd8e8e2-2dda-4d0c-ae80-309fd9c67f49" />
+
 
 
 
